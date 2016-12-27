@@ -9,6 +9,12 @@
     angular.module('mean-base');
 
     function MainService(Restangular) {
+        this.getConfig = function () {
+            return Restangular
+                .one('config')
+                .get();
+        };
+
         this.getStatus = function () {
             return Restangular
                 .one('status')

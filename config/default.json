@@ -1,0 +1,15 @@
+{
+    "app": {
+        "version": "1.0.0",
+        "name": "Application Name",
+        "author": "Author Name",
+        "email": "foo@bar.com"
+    },
+    "db": {
+        "host": "localhost",
+        "port": 27017,
+        "user": "",
+        "password": "",
+        "name": "mean-test"
+    }
+}

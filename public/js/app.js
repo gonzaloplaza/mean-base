@@ -4,6 +4,7 @@ var app = angular.module('mean-base', [
     'ngAnimate',
     'ngStorage',
     'ngSanitize',
+    'ngRoute',
     'restangular'
 ])
 
@@ -13,16 +14,16 @@ var app = angular.module('mean-base', [
  * @param RestangularProvider
  * @param ParametersApp
  */
-.config(function (RestangularProvider, ParametersApp, $qProvider) {
-        RestangularProvider.setBaseUrl(ParametersApp.api_endpoint);
-        console.log('Setting API Endpoint ... ' + ParametersApp.api_endpoint);
+.config(function (RestangularProvider, ConfigApp, $qProvider) {
+        RestangularProvider.setBaseUrl(ConfigApp.api_endpoint);
+        console.log('Setting API Endpoint ... ' + ConfigApp.api_endpoint);
         $qProvider.errorOnUnhandledRejections(false);
 })
 
-    /**
-     * @function run app
-     * @desc Init angularjs app
-     */
-.run(function ($rootScope, $sessionStorage, $localStorage, ParametersApp) {
+/**
+ * @function run app
+ * @desc Init angularjs app
+ */
+.run(function ($rootScope, $sessionStorage, $localStorage, ConfigApp) {
         console.log('App init ... OK');
 });

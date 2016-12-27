@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var app = require('../app/app');
-var config = require('../app/config/config');
+var config = require('config');
 var debug = require('debug')('mean-base:server');
 var http = require('http');
 
@@ -58,6 +58,7 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
-  console.log('---- ' + config.app.name + '----');
+  console.log('---- ' + config.app.name + ' version ' + config.app.version + ' ----');
   console.log('Server INITIALIZED listening on port: ' + port);
+  console.log('NODE_ENV Environment: ' + config.util.getEnv('NODE_ENV'));
 }

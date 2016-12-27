@@ -1,19 +1,19 @@
 var mongoose = require('mongoose');
-var config = require('../app/config/config');
-
-var uri = config.db.host + ':' + config.db.port + '/' + config.db.name;
+var config = require('config');
+var db = config.get('db');
+var uri = db.host + ':' + db.port + '/' + db.name;
 
 var options = {
   db: { native_parser: true },
   server: { poolSize: 5 },
-  user: '',
-  pass: ''
+  user: db.user,
+  pass: db.password
 }
 
 mongoose.connect(uri, options);
 
 mongoose.connection.on('connected', function () {  
-  console.log('Mongoose default connection open to ' + uri);
+  console.log('Mongoose default connection open: ' + uri);
 }); 
 
 mongoose.connection.on('error',function (err) {  
@@ -21,7 +21,7 @@ mongoose.connection.on('error',function (err) {
 }); 
 
 mongoose.connection.on('disconnected', function () {  
-  console.log('Mongoose default connection disconnected'); 
+  console.log('Mongoose default connection disconnected');
 });
 
 process.on('SIGINT', function() {  

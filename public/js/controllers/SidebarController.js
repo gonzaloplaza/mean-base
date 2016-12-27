@@ -3,7 +3,7 @@
 (function () {
     angular.module('mean-base');
 
-    function SidebarController($scope, $rootScope, $sessionStorage, $location, ParametersApp) {
+    function SidebarController($scope, $rootScope, $route, $sessionStorage, $location, ConfigApp) {
         /**
          * @ngdoc function
          * @name init
@@ -13,6 +13,13 @@
             $scope.$session = $sessionStorage;
             console.log('Sidebar Controller init... OK');
         })();
+
+        $scope.isActive = function (path) {
+            if ($route.current && $route.current.regexp) {
+                return $route.current.regexp.test(path);
+            }
+            return false;
+        };
 
     }
 

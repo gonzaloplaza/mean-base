@@ -3,7 +3,7 @@
 (function () {
     angular.module('mean-base');
 
-    function MainController($scope, $rootScope, $sessionStorage, $location, ParametersApp, MainService) {
+    function MainController($scope, $rootScope, $sessionStorage, $location, ConfigApp, MainService) {
         /**
          * @ngdoc function
          * @name init
@@ -11,15 +11,22 @@
          */
         (function init() {
             $scope.$session = $sessionStorage;
+            getStatus();
+            console.log('Main Controller init... OK');
+        })();
+
+        function getStatus() {
             MainService.getStatus().then(function(response) {
-                $scope.status = true;
+                if(response.success) {
+                    $scope.status = response.success;
+                } else {
+                    $scope.status = false;
+                }
             }, function(error) {
                 $scope.status = false;
                 console.log('Error getting API status response');
             });
-
-            console.log('Main Controller init... OK');
-        })();
+        }
 
     }
 

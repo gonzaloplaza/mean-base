@@ -1,15 +1,16 @@
 {
   "name": "mean-base",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An application based on MEAN stack",
-  "author": "Gonzalo Plaza <gonzalo@ordermin.com>",
+  "author": "Gonzalo Plaza <hello@ordermin.com>",
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./bin/www"
+    "start": "export NODE_ENV=development && node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.15.2",
+    "config": "^1.24.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "express": "~4.14.0",
@@ -17,5 +18,7 @@
     "mongoose": "~4.7.4",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
   }
 }
