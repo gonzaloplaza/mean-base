@@ -10,6 +10,7 @@ var options = {
   pass: db.password
 }
 
+mongoose.Promise = global.Promise;
 mongoose.connect(uri, options);
 
 mongoose.connection.on('connected', function () {  

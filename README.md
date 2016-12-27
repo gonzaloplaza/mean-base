@@ -25,7 +25,7 @@ $ node bin/setup
 $ nodemon bin/www
 ```
 
-Without close your terminal, you can check the project running on **http://localhost:8080**
+Without closing your terminal, you can check the project running at **http://localhost:8080**
 
 For production environments.. (pending)
 
@@ -71,7 +71,7 @@ Check if your MongoDB service is installed and running.
 $ sudo service mongod status|start|restart
 ```
 
-Without close the terminal, check the application log messages. It should display the following message after starting:
+Without closing the terminal, check the application log messages. It should display the following message after starting (or error description):
 ```sh
 $ nodemon bin/www
 ---- Mean Base Application version 1.0.0 ----
