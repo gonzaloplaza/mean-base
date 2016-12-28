@@ -80,6 +80,9 @@ NODE_ENV Environment: development
 Mongoose default connection open: localhost:27017/mean-test
 ```
 
+### Changelog
+You can follow the project Changelog, improvements, versions and releases in [CHANGELOG.md](CHANGELOG.md) file.
+
 ### Contributing
 This project has been built using best practices acquired from other MEAN stack projects like mean.io or [MEAN.JS](https://meanjs.org/). Also i taken some good file organization techniques from [Symfony3 PHP Framework](https://symfony.com).
 

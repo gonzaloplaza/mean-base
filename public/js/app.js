@@ -5,6 +5,7 @@ var app = angular.module('mean-base', [
     'ngStorage',
     'ngSanitize',
     'ngRoute',
+    'angularSpinner',
     'restangular'
 ])
 

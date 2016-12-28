@@ -5,7 +5,7 @@ var config = require('config');
 
 var env = config.util.getEnv('NODE_ENV');
 
-fs.createReadStream('config/default.json')
+fs.createReadStream('config/default.dist.json')
     .pipe(fs.createWriteStream('config/'+env+'.json'));
 
 

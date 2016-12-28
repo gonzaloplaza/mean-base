@@ -1,8 +1,8 @@
 {
   "name": "mean-base",
   "version": "0.1.1",
-  "description": "An application based on MEAN stack",
-  "author": "Gonzalo Plaza <hello@ordermin.com>",
+  "description": "Build simple web applications based in MEAN fullstack architecture",
+  "author": "Gonzalo Plaza",
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

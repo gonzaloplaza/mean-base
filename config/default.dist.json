@@ -1,0 +1,27 @@
+{
+    "app": {
+      "version": "1.0.0",
+      "name": "Application Name",
+      "author": "Author Name",
+      "email": "foo@bar.com"
+    },
+    "db": {
+      "host": "localhost",
+      "port": 27017,
+      "user": "",
+      "password": "",
+      "name": "mean-test"
+    },
+    "mailer": {
+      "host": "smtp.provider.com",
+      "port": 587,
+      "transport": "smtp",
+      "encryption": "ssl",
+      "secure": true,
+      "auth": {
+        "user": "user",
+        "password": "password"
+      },
+      "sender": "foo@bar.com"
+    }
+}

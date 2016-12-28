@@ -3,7 +3,7 @@
 (function () {
     angular.module('mean-base');
 
-    function ContactController($scope, $sessionStorage, ContactService) {
+    function ContactController($scope, $sessionStorage, usSpinnerService, ContactService) {
         /**
          * @ngdoc function
          * @name init
@@ -20,15 +20,19 @@
         })();
 
         $scope.sendContact = function(data) {
+            usSpinnerService.spin('loading-spin');
             ContactService.addContact(data).then(function(response) {
                 if(response.success) {
                     $scope.sent = response.success;
                     clearData();
+                    usSpinnerService.stop('loading-spin');
                 } else {
                     $scope.error = true;
+                    usSpinnerService.stop('loading-spin');
                 }
             }, function (error) {
                 $scope.error = true;
+                usSpinnerService.stop('loading-spin');
                 console.log('Error sending contact form');
             });
         };
