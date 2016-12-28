@@ -19,8 +19,8 @@
       "encryption": "ssl",
       "secure": true,
       "auth": {
-        "user": "user",
-        "password": "password"
+        "user": "",
+        "password": ""
       },
       "sender": "foo@bar.com"
     }

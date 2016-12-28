@@ -1,27 +1,20 @@
 var express = require('express');
-var config  = require('config');
-var ContactCtrl = require('../controllers/contacts');
+var ContactController = require('../controllers/contact');
+var MainController    = require('../controllers/main');
 var router = express.Router();
 
-router.get('/', function(req, res) {
-  res.send('welcome to the Application API Endpoint');
-});
+//API Endpoint route
+router.route('/')
+    .get(MainController.getApiIndex);
 
-router.get('/config', function(req, res) {
-    res.json({
-        'success': true,
-        'data': config.app
-    });
-});
+//API Routes
+router.route('/status')
+    .get(MainController.getStatus);
 
-router.get('/status', function(req, res) {
-  res.json({
-  	'success': true,
-  	'message': 'API response received successfully'
-  });
-});
+router.route('/config')
+    .get(MainController.getConfig);
 
 router.route('/contact')
-    .post(ContactCtrl.postContact);
+    .post(ContactController.postContact);
 
 module.exports = router;
