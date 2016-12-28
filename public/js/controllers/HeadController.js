@@ -3,7 +3,7 @@
 (function () {
     angular.module('mean-base');
 
-    function HeadController($scope, $rootScope, $sessionStorage, $location, ConfigApp, MainService) {
+    function HeadController($scope, $sessionStorage, MainService) {
         /**
          * @ngdoc function
          * @name init
@@ -12,7 +12,6 @@
         (function init() {
             $scope.$session = $sessionStorage;
             getConfig();
-            console.log('Head Controller init... OK');
         })();
 
         function getConfig() {
@@ -20,7 +19,6 @@
                 if(response.success) {
                     $scope.app = response.data;
                 } else {
-                    //handle error
                     console.log('Error getting config response');
                 }
             }, function(error) {

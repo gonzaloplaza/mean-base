@@ -16,7 +16,6 @@
             $scope.content.subjects = getSubjects();
             $scope.sent    = false;
             $scope.error   = false;
-            console.log('Contact Controller init... OK');
         })();
 
         $scope.sendContact = function(data) {

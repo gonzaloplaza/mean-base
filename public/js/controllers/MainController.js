@@ -3,7 +3,7 @@
 (function () {
     angular.module('mean-base');
 
-    function MainController($scope, $rootScope, $sessionStorage, $location, ConfigApp, MainService) {
+    function MainController($scope, $sessionStorage, MainService) {
         /**
          * @ngdoc function
          * @name init
@@ -12,7 +12,6 @@
         (function init() {
             $scope.$session = $sessionStorage;
             getStatus();
-            console.log('Main Controller init... OK');
         })();
 
         function getStatus() {

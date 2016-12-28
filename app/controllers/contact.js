@@ -1,10 +1,12 @@
-var mongoose     = require('mongoose');
-var nodemailer   = require('nodemailer');
-var config       = require('config');
-var ContactModel = require('../models/contact');
-var Contact      = mongoose.model('Contact');
-var mailer       = config.get('mailer');
-var app          = config.get('app');
+var mongoose      = require('mongoose');
+var path          = require('path');
+var nodemailer    = require('nodemailer');
+var EmailTemplate = require('email-templates').EmailTemplate;
+var config        = require('config');
+var ContactModel  = require('../models/contact');
+var Contact       = mongoose.model('Contact');
+var mailer        = config.get('mailer');
+var app           = config.get('app');
 
 exports.postContact = function(req, res) {
     var contact = new Contact({
@@ -20,6 +22,7 @@ exports.postContact = function(req, res) {
     });
 
     function sendMail(contact) {
+        //console.log('dir: ' + path.join(__dirname, '../../views/email/contact'));
         var transporter = nodemailer.createTransport({
             host: mailer.host,
             port: mailer.port,
@@ -30,23 +33,15 @@ exports.postContact = function(req, res) {
             }
         });
 
-        //@TODO: Use templating https://nodemailer.com/2-0-0-beta/templating/
-        var contactEmailTemplate = '<p>Hello, you have received a new message from ' + '<strong>{{name}} ({{email}})</strong></p>' +
-            '<br />' +
-            '<strong>Subject: </strong> {{subject}}' +
-            '<br />' +
-            '<strong>Message: </strong> {{message}}';
+        var sendContactNotification = transporter.templateSender(
+            new EmailTemplate(path.join(__dirname, '../views/email/contact')), {
+                from: mailer.sender
+            }
+        );
 
-        var sendContactMail = transporter.templateSender({
-            subject: 'New message received from {{name}}',
-            text: 'Hello, you have received a new message from {{name}} : {{email}}: {{message}}',
-            html: contactEmailTemplate
-        }, {
-            from: mailer.sender
-        });
-
-        sendContactMail({
-            to: app.email
+        sendContactNotification({
+            to: app.email,
+            subject: 'New message received from ' + contact.name
         }, {
             name: contact.name,
             email: contact.email,

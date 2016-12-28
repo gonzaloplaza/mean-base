@@ -1,7 +1,12 @@
 body {
     overflow-x: hidden;
     background-color: #fcfcfc;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.5em;
+}
+
+h1 {
+    font-weight: 700;
 }
 
 #wrapper {
