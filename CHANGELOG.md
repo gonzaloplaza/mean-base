@@ -4,10 +4,10 @@
 ### 0.1.1  (pending)
 
 Second release
-* Improving controllers and ExpressJS routes/logic
+* Improving controllers, middlewares and ExpressJS routes/logic
 * Adds Email template system (using pug)
-* Adds LESS
-* Adds CSS/JS compression: Middleware solution for on the fly compression of JavaScript/CSS files
+* Adds Cache, logging system and folders.
+* Adds CSS/JS compression/minified assets on the fly (css/js files)
 
 <a name="0.1.0"></a>
 ### 0.1.0  (2016-12-28)

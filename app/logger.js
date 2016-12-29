@@ -21,7 +21,7 @@ var logType = 'combined';
 module.exports = function(app) {
     if (app.get('env') == 'production') {logType = 'common';}
     app.use(morgan(logType, {
-        stream: fs.createWriteStream(path.join(__dirname, '../var/log/error.log'), {
+        stream: fs.createWriteStream(path.join(__dirname, '../var/logs/error.log'), {
             flags: 'a'
         }),
         skip: function (req, res) {

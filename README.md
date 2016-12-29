@@ -83,6 +83,12 @@ Check if your MongoDB service is installed and running.
 $ sudo service mongod status|start|restart
 ```
 
+Create and give write permission to cache/logs folders:
+```sh
+$ mkdir var/cache var/logs
+$ chmod -R 777 var/cache var/logs
+```
+
 Without closing the terminal, check the application log messages. It should display the following message after starting (or error description):
 ```sh
 $ nodemon bin/www
