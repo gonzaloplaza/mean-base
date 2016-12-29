@@ -1,3 +1,15 @@
+/*!
+ * contact model
+ * Copyright(c) 2016-2017 Gonzalo Plaza
+ * MIT Licensed
+ */
+
+'use strict';
+
+/**
+ * Module dependencies.
+ * @private
+ */
 var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
 

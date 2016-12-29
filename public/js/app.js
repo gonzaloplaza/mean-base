@@ -25,6 +25,6 @@ var app = angular.module('mean-base', [
  * @function run app
  * @desc Init angularjs app
  */
-.run(function ($rootScope, $sessionStorage, $localStorage, ConfigApp) {
+.run(function () {
         console.log('App init ... OK');
 });

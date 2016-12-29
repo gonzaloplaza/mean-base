@@ -10,6 +10,7 @@ var port = normalizePort(process.env.PORT || '8080');
 app.set('port', port);
 
 var server = http.createServer(app);
+http.globalAgent.maxSockets = Infinity;
 
 server.listen(port);
 server.on('error', onError);

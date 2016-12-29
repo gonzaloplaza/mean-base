@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('mean-base')
+angular
+    .module('mean-base')
     .constant('ConfigApp', {
-    api_endpoint: window.location.protocol + '//' + window.location.host + '/api/v1'
+        api_endpoint: window.location.protocol + '//' + window.location.host + '/api/v1'
 });

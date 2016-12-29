@@ -1,3 +1,15 @@
+/*!
+ * db
+ * Copyright(c) 2016-2017 Gonzalo Plaza
+ * MIT Licensed
+ */
+
+'use strict';
+
+/**
+ * Module dependencies.
+ * @private
+ */
 var mongoose = require('mongoose');
 var config = require('config');
 var db = config.get('db');
@@ -8,7 +20,7 @@ var options = {
   server: { poolSize: 5 },
   user: db.user,
   pass: db.password
-}
+};
 
 mongoose.Promise = global.Promise;
 mongoose.connect(uri, options);

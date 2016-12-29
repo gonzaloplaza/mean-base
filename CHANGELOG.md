@@ -6,6 +6,7 @@
 Second release
 * Improving controllers and ExpressJS routes/logic
 * Adds Email template system (using pug)
+* Adds LESS
 * Adds CSS/JS compression: Middleware solution for on the fly compression of JavaScript/CSS files
 
 <a name="0.1.0"></a>
