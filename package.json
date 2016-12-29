@@ -6,20 +6,21 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "export NODE_ENV=development && node ./bin/www"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.15.2",
+    "clean-css": "^3.4.23",
     "compression": "^1.6.2",
     "config": "^1.24.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "email-templates": "^2.5.4",
     "express": "~4.14.0",
-    "express-minify": "^0.2.0",
     "method-override": "^2.3.7",
     "mongoose": "~4.7.4",
     "morgan": "~1.7.0",
+    "node-minify": "^2.0.2",
     "nodemailer": "^2.7.0",
     "pug": "^2.0.0-beta6",
     "serve-favicon": "~2.3.0"

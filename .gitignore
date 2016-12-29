@@ -21,9 +21,10 @@ coverage/
 
 # App and assets
 # ==============
-public/dist/
 /var/cache/*
 /var/logs/*
+/public/css/dist/
+/public/js/dist/
 uploads
 modules/users/client/img/profile/uploads
 config/env/local.js
@@ -84,5 +85,6 @@ mongod
 *.ntvs*
 *.njsproj
 *.sln
+
 
 

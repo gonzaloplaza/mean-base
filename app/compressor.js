@@ -11,7 +11,7 @@
  * @private
  */
 var compression = require('compression');
-var minify = require('express-minify');
+var minifier = require('node-minify');
 var path = require('path');
 var fs = require('fs');
 
@@ -20,16 +20,42 @@ var fs = require('fs');
  */
 module.exports = function(app, express){
     app.use(compression());
-    app.use(function(req, res, next)
-    {
-        res._uglifyMangle = false;
-        next();
+    minifier.minify({
+        compressor: 'uglifyjs',
+        input: [
+            'public/js/*.js',
+            'public/js/controllers/*.js',
+            'public/js/services/*.js',
+            'public/js/filters/*.js',
+            'public/js/lib/*.js'
+        ],
+        output: 'public/js/dist/app.js',
+        options: {
+            warnings: false,
+            mangle: false,
+            compress: true
+        },
+        callback: function(err) {
+            console.log('JS assets compiled .... OK');
+            if(err) console.log('Error compiling JS assets: ' + err);
+        }
     });
-    app.use(minify({
-        cache: path.join(__dirname, '../var/cache')
-    }));
+    minifier.minify({
+        compressor: 'clean-css',
+        input: 'public/css/*.css',
+        output: 'public/css/dist/app.css',
+        options: {
+            advanced: true,
+            aggressiveMerging: false
+        },
+        callback: function (err, min) {
+            console.log('CSS assets compiled .... OK');
+            if(err) console.log('Error compiling JS assets: ' + err);
+        }
+    });
     app.use(express.static(path.join(__dirname, '../public')));
 };
+
 
 
 
