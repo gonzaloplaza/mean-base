@@ -1,46 +1,47 @@
-var mongoose      = require('mongoose');
 var path          = require('path');
 var nodemailer    = require('nodemailer');
 var EmailTemplate = require('email-templates').EmailTemplate;
 var config        = require('config');
-var ContactModel  = require('../models/contact');
-var Contact       = mongoose.model('Contact');
-var mailer        = config.get('mailer');
-var app           = config.get('app');
+var Contact       = require('../models/contact');
+var mailerConfig  = config.get('mailer');
+var appConfig     = config.get('app');
 
 exports.postContact = function(req, res) {
-    var contact = new Contact({
+    var contactData = {
         name:    req.body.name,
         email:   req.body.email,
         subject: req.body.subject,
         message: req.body.message
-    });
+    };
 
-    contact.save(function(err) {
-        if(err) return res.status(500).send(err.message);
-        sendMail(contact);
+    Contact.create(contactData, {
+        success: function(c){
+            sendMail(c);
+        },
+        error: function(err){
+            return res.status(500).send(err);
+        }
     });
 
     function sendMail(contact) {
-        //console.log('dir: ' + path.join(__dirname, '../../views/email/contact'));
         var transporter = nodemailer.createTransport({
-            host: mailer.host,
-            port: mailer.port,
+            host: mailerConfig.host,
+            port: mailerConfig.port,
             secure: true,
             auth: {
-                user: mailer.auth.user,
-                pass: mailer.auth.password
+                user: mailerConfig.auth.user,
+                pass: mailerConfig.auth.password
             }
         });
 
         var sendContactNotification = transporter.templateSender(
             new EmailTemplate(path.join(__dirname, '../views/email/contact')), {
-                from: mailer.sender
+                from: mailerConfig.sender
             }
         );
 
         sendContactNotification({
-            to: app.email,
+            to: appConfig.email,
             subject: 'New message received from ' + contact.name
         }, {
             name: contact.name,

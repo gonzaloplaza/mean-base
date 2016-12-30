@@ -7,7 +7,8 @@ Second release
 * Improving controllers, middlewares and ExpressJS routes/logic
 * Adds Email template system (using pug)
 * Adds Cache, logging system and folders.
-* Adds CSS/JS compression/minified assets on the fly (css/js files)
+* Adds CSS/JS compression/minified assets on the fly (css/js files).
+* Adds Mocha/chai test framework, adds api and contact tests.
 
 <a name="0.1.0"></a>
 ### 0.1.0  (2016-12-28)

@@ -5,7 +5,7 @@
   "author": "Gonzalo Plaza",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha app/tests --recursive --reporter spec --growl",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -23,7 +23,11 @@
     "node-minify": "^2.0.2",
     "nodemailer": "^2.7.0",
     "pug": "^2.0.0-beta6",
-    "serve-favicon": "~2.3.0"
+    "request": "^2.79.0",
+    "serve-favicon": "^2.3.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
 }
