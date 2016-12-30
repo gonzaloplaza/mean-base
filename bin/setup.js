@@ -7,7 +7,9 @@ var env = config.util.getEnv('NODE_ENV');
 if (!fs.existsSync('config/' + env + '.json')) {
     fs.createReadStream('config/default.dist.json')
         .pipe(fs.createWriteStream('config/'+env+'.json'));
-    console.log('Enviroment file created into /config/'+env+'.json file');
+    console.log('INSTALLED: Enviroment file created into /config/'+env+'.json file');
+} else {
+    console.log('SKIPPED: Environment config files already created.')
 }
 
 if (!fs.existsSync('var/logs')) {

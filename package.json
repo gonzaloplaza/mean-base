@@ -5,6 +5,7 @@
   "author": "Gonzalo Plaza",
   "license": "MIT",
   "scripts": {
+    "install": "node ./bin/setup",
     "test": "mocha app/tests --recursive --reporter spec --growl",
     "start": "node ./bin/www"
   },
