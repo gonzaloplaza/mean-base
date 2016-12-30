@@ -13,13 +13,15 @@ if (!fs.existsSync('config/' + env + '.json')) {
 }
 
 if (!fs.existsSync('var/logs')) {
-    fs.mkdirSync('var/logs',777);
+    fs.mkdirSync('var/logs');
+    console.log('Created logs folder');
+}
+if (!fs.existsSync('var/logs/error.log')) {
     fs.createWriteStream('var/logs/error.log');
-    console.log('Created error logger');
 }
 
 if (!fs.existsSync('var/cache')) {
-    fs.mkdirSync('var/cache',777);
+    fs.mkdirSync('var/cache');
     console.log('Created cache folder');
 }
 

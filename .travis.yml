@@ -11,3 +11,5 @@ node_js:
 before_install:
   - "node -v"
   - "npm -v"
+  - "mkdir var/logs var/cache"
+  - "chmod -R 777 var/logs var/cache"
