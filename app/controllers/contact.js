@@ -50,7 +50,7 @@ exports.postContact = function(req, res) {
             message: contact.message
         }, function(err, info){
             if(err) {
-                console.log('Error' + err);
+                console.log('An error has occurred: ' + err);
                 return res.status(500).send(err);
             } else{
                 res.status(200).jsonp({

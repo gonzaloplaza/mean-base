@@ -8,7 +8,7 @@ Second release
 * Adds Email template system (using pug)
 * Adds Cache, logging system and folders.
 * Adds CSS/JS compression/minified assets on the fly (css/js files).
-* Adds Mocha/chai test framework, adds api and contact tests.
+* Adds Mocha/chai test framework, adds api and contact test scripts.
 
 <a name="0.1.0"></a>
 ### 0.1.0  (2016-12-28)
