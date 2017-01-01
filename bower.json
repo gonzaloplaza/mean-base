@@ -5,7 +5,8 @@
     "angular-spinner": "^0.8.1",
     "restangular": "^1.6.0",
     "underscore": "^1.8.3",
-    "ngstorage": "^0.3.11"
+    "ngstorage": "^0.3.11",
+    "bootstrap": "^3.3.7"
   },
   "directory": "public/js/vendor",
   "appPath": "app",

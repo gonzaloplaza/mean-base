@@ -1,7 +1,10 @@
 # MEAN Base
 ![Logo of the project](http://ordermin.com/images/mean-logo.jpg)
 
-[![Build Status](https://travis-ci.org/gonzaloplaza/mean-base.svg?branch=master)](https://travis-ci.org/gonzaloplaza/mean-base)
+[![Travis](https://img.shields.io/travis/gonzaloplaza/mean-base.svg?style=flat-square)](https://travis-ci.org/gonzaloplaza/mean-base)
+[![Github All Releases](https://img.shields.io/github/downloads/gonzaloplaza/mean-base/total.svg?style=flat-square)](https://github.com/gonzaloplaza/mean-base)
+[![David](https://img.shields.io/david/gonzaloplaza/mean-base.svg?style=flat-square)](https://david-dm.org/gonzaloplaza/mean-base)
+[![David](https://img.shields.io/david/dev/gonzaloplaza/mean-base.svg?style=flat-square)](https://david-dm.org/gonzaloplaza/mean-base?type=dev)
 
 **MEAN Base** is an open source project designed and assembled to build simple web applications based in MEAN fullstack architecture: MongoDB, Express, AngularJS, Node.Js
 

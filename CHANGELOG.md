@@ -1,5 +1,14 @@
 ## Project Changelog
 
+<a name="0.1.2"></a>
+### 0.1.2  (pending)
+
+Third Release
+* Adds API/user authentication: Passport.
+* Adds user model and CRUD/Auth API operations.
+* Angular frontend: local dependencies (No CDN).
+* Create npm package + update install documentation
+
 <a name="0.1.1"></a>
 ### 0.1.1  (2017-01-01)
 
