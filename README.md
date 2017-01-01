@@ -1,6 +1,8 @@
 # MEAN Base
 ![Logo of the project](http://ordermin.com/images/mean-logo.jpg)
 
+[![Build Status](https://travis-ci.org/gonzaloplaza/mean-base.svg?branch=master)](https://travis-ci.org/gonzaloplaza/mean-base)
+
 **MEAN Base** is an open source project designed and assembled to build simple web applications based in MEAN fullstack architecture: MongoDB, Express, AngularJS, Node.Js
 
   - (**M**)ongoDB is the leading NoSQL database, empowering businesses to be more agile and scalable.
