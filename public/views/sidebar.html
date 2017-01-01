@@ -4,16 +4,16 @@
             <b>MENU</b>
         </a>
     </li>
-    <li>
+    <li ng-class="isActive('homepage') ? 'active' : ''">
         <a href="/#!/">Dashboard</a>
     </li>
-    <li>
+    <li ng-class="isActive('docs') ? 'active' : ''">
         <a href="/#!/docs">Documentation</a>
     </li>
-    <li>
+    <li ng-class="isActive('about') ? 'active' : ''">
         <a href="/#!/about">About</a>
     </li>
-    <li>
+    <li ng-class="isActive('contact') ? 'active' : ''">
         <a href="/#!/contact">Contact</a>
     </li>
 </ul>

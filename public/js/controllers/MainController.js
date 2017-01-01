@@ -16,12 +16,8 @@
 
         function getStatus() {
             MainService.getStatus().then(function(response) {
-                if(response.success) {
-                    $scope.status = response.success;
-                } else {
-                    $scope.status = false;
-                }
-            }, function(error) {
+                if(response.success) $scope.status = response.success;
+            }, function(err) {
                 $scope.status = false;
                 console.log('Error getting API status response');
             });

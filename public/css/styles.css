@@ -98,6 +98,13 @@ h1 {
     background: none;
 }
 
+.sidebar-nav .active {
+    text-decoration: none;
+    color: #fff !important;
+    background: rgba(255,255,255,0.2) !important;
+}
+
+
 .page-header {
     padding-bottom: 9px;
     margin: 0 0 20px;

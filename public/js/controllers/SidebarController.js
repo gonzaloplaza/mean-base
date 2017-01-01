@@ -13,11 +13,12 @@
             $scope.$session = $sessionStorage;
         })();
 
-        $scope.isActive = function (path) {
-            if ($route.current && $route.current.regexp) {
-                return $route.current.regexp.test(path);
+        $scope.isActive = function (name) {
+            if ($route.current && $route.current.name) {
+                return ($route.current.name == name);
+            } else {
+                return false;
             }
-            return false;
         };
 
     }
